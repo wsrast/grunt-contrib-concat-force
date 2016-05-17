@@ -1,12 +1,12 @@
 {
-  "name": "grunt-contrib-concat",
+  "name": "grunt-contrib-concat-force",
   "description": "Concatenate files.",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "author": {
-    "name": "Grunt Team",
-    "url": "http://gruntjs.com/"
+    "name": "wsrast",
+    "url": "https://github.com/wsrast"
   },
-  "repository": "gruntjs/grunt-contrib-concat",
+  "repository": "https://github.com/wsrast/grunt-contrib-concat-force",
   "license": "MIT",
   "engines": {
     "node": ">=0.10.0"
@@ -21,7 +21,9 @@
   },
   "devDependencies": {
     "grunt": "^1.0.0",
+    "grunt-chmod": "^1.1.1",
     "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-internal": "^1.1.0",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-nodeunit": "^1.0.0"
@@ -34,6 +36,5 @@
   ],
   "files": [
     "tasks"
-  ],
-  "appveyor_id": "l42173901ms416km"
+  ]
 }

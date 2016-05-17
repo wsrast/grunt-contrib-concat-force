@@ -1,6 +1,6 @@
-# grunt-contrib-concat v1.0.1 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-concat.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-concat) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/l42173901ms416km/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-concat/branch/master)
+# grunt-contrib-concat-force v0.0.1 
 
-> Concatenate files.
+> Concatenate files, forcing overwrite of read-only files when force flag is true.
 
 
 
@@ -27,6 +27,12 @@ _Run this task with the `grunt concat` command._
 Task targets, files and options may be specified according to the Grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
 
 ### Options
+
+#### force
+Type: `Boolean`  
+Default: `false`
+
+Set this to true to overwrite read-only files.
 
 #### separator
 Type: `String`  
@@ -98,6 +104,25 @@ Default: `embed`
 Determines the type of source map that is generated. The default value, `embed`, places the content of the sources directly into the map. `link` will reference the original sources in the map as links. `inline` will store the entire map as a data URI in the destination file.
 
 ### Usage Examples
+
+#### Overwriting read-only files
+
+In this example, running `grunt concat:dist` (or `grunt concat` because `concat` is a [multi task][multitask]) will concatenate the three specified source files (in order) and overwrite the read-only `dist/built.js` file with the output.
+
+```js
+// Project configuration.
+grunt.initConfig({
+  concat: {
+    options: {
+      force: true,
+    },
+    dist: {
+      src: ['src/intro.js', 'src/project.js', 'src/outro.js'],
+      dest: 'dist/built.js',
+    },
+  },
+});
+```
 
 #### Concatenating with a custom separator
 

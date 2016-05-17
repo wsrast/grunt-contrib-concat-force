@@ -8,6 +8,15 @@ function getNormalizedFile(filepath) {
 }
 
 exports.concat = {
+  force_option: function(test) {
+    test.expect(1);
+
+    var actual = getNormalizedFile('tmp/readonly');
+    var expected = getNormalizedFile('test/expected/readonly');
+    test.equal(actual, expected, 'should describe what the force option output is.');
+
+    test.done();
+  },
   default_options: function(test) {
     test.expect(1);
 
