@@ -1,4 +1,4 @@
-# grunt-contrib-concat-force v0.0.1 
+# grunt-contrib-concat-force v1.1.0 
 
 > Concatenate files, forcing overwrite of read-only files when force flag is true.
 
