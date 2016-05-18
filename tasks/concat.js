@@ -26,7 +26,8 @@ module.exports = function (grunt) {
 			sourceMap: false,
 			sourceMapName: undefined,
 			sourceMapStyle: 'embed',
-			force: false
+			force: false,
+			forceOutsideWrite: false
 		});
 
 		// Normalize boolean options that accept options objects.
@@ -113,7 +114,7 @@ module.exports = function (grunt) {
 
 			// Write the destination file.
 			if (options.force && grunt.file.exists(f.dest)) {
-				grunt.file.delete(f.dest);
+				grunt.file.delete(f.dest, {force:options.forceOutsideWrite});
 				grunt.verbose.write('Pre-existing file ' + chalk.cyan(f.dest) + ' deleted.');
 			}
 			grunt.file.write(f.dest, src);

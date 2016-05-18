@@ -34,6 +34,12 @@ Default: `false`
 
 Set this to true to overwrite read-only files.
 
+#### forceOutsideWrite
+Type: `Boolean`  
+Default: `false`
+
+Set this to true to allow the overwriting of files outside the current working directory.
+
 #### separator
 Type: `String`  
 Default: `grunt.util.linefeed`
@@ -115,6 +121,7 @@ grunt.initConfig({
   concat: {
     options: {
       force: true,
+      forceOutsideWrite: true //optional. Defaults to false.
     },
     dist: {
       src: ['src/intro.js', 'src/project.js', 'src/outro.js'],

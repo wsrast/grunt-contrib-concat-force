@@ -1,3 +1,8 @@
+v0.4.0:
+  date: 2016-05-18
+  changes:
+    - Add forceOutsideWrite option to override default grunt.file.delete behavior
+    - Update readme.md for same
 v0.1.0:
   date: 2016-05-17
   changes:
